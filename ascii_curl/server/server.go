@@ -1,7 +1,6 @@
 package server
 
 import (
-	"ascii_curl/config"
 	"ascii_curl/frames"
 	"encoding/json"
 	"flag"
@@ -115,7 +114,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 // Server.
 func InitServer() {
-	config.InitEnv()
 	flag.Parse()
 	// Don't write to /tmp - doesn't work in docker scratch
 	flag.Set("logtostderr", "true")
