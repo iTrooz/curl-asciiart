@@ -102,9 +102,10 @@ fi
 
 # Set up output directory
 mkdir -p "$OUT_DIR/$NAME"
+rm -f "$OUT_DIR/$NAME/"*
 
 # Generate PNG frames
-convert -coalesce "$IN_FILE" "$OUT_DIR/$NAME/frame.png"
+convert -coalesce "$IN_FILE" "$OUT_DIR/$NAME/frame-%03d.png"
 
 # Set delay
 echo "$DELAY" > "$OUT_DIR/$NAME/delay.env"
