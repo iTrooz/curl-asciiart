@@ -19,7 +19,7 @@ go run main.go
 
 ## Running in Docker
 ```bash
-docker run -p 8080:8080 hugomd/ascii-live:latest
+docker compose up --build -d
 ```
 
 ## Adding a new ASCII art
@@ -33,5 +33,4 @@ gen_frames.sh [-o output_dir] [-n name] [-d delay] [-c color_depth] [-w width] <
 - `-d <delay>`: Frame delay in milliseconds. Default: `100`
 - `-c <color_depth>`: Color depth. Must be `1` (monochrome), `8` (256 colors), or `24` (true color). Default: `8`
 - `-w <width>`: Width of output. Default: `64`
-
 
