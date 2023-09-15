@@ -5,7 +5,7 @@ Forked from [`ascii.live`](https://github.com/hugomd/ascii-live).
 
 Try it out in your terminal:
 ```bash
-curl ascii.peanut.tf/parrot
+curl https://ascii.peanut.tf/parrot
 ```
 
 <img src="./demo.gif" width="400"/>
