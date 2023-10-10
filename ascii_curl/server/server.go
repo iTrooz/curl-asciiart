@@ -137,6 +137,6 @@ func InitServer() {
 		WriteTimeout: 0,
 	}
 
-	glog.Infof("Serving...")
+	glog.Infof("Serving on 0.0.0.0:%s ...", port)
 	glog.Fatal(srv.ListenAndServe())
 }
