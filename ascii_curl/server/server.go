@@ -124,14 +124,19 @@ func InitServer() {
 	r.HandleFunc("/{frameSource}", handler).Methods("GET")
 	r.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		glog.Error("Environment variable PORT not set")
+		return
+	}
 	srv := &http.Server{
 		Handler: r,
-		Addr:    ":" + os.Getenv("PORT"),
+		Addr:    ":" + port,
 		// Set unlimited read/write timeouts
 		ReadTimeout:  0,
 		WriteTimeout: 0,
 	}
 
-	glog.Infof("Serving...")
+	glog.Infof("Serving on 0.0.0.0:%s ...", port)
 	glog.Fatal(srv.ListenAndServe())
 }
